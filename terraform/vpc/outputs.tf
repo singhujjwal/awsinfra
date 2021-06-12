@@ -59,23 +59,3 @@ output "default_security_group_id" {
   description = "Allow all traffic between private subnets"
   value       = module.vpc.default_security_group_id
 }
-
-output "intra_subnets" {
-  description = "List of IDs of intra subnets"
-  value       = aws_subnet.intra.*.id
-}
-
-output "intra_subnet_arns" {
-  description = "List of ARNs of intra subnets"
-  value       = aws_subnet.intra.*.arn
-}
-
-output "intra_subnets_cidr_blocks" {
-  description = "List of cidr_blocks of intra subnets"
-  value       = aws_subnet.intra.*.cidr_block
-}
-
-output "intra_subnets_ipv6_cidr_blocks" {
-  description = "List of IPv6 cidr_blocks of intra subnets in an IPv6 enabled VPC"
-  value       = aws_subnet.intra.*.ipv6_cidr_block
-}

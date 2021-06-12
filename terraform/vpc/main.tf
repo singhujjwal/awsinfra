@@ -17,31 +17,31 @@ resource "aws_security_group" "vpc_base_sg" {
   vpc_id      = module.vpc.vpc_id
 }
 
-module "vpc_endpoints" {
-  source             = "terraform-aws-modules/vpc/aws//modules/vpc-endpoints"
-  vpc_id             = module.vpc.vpc_id
-  security_group_ids = [data.aws_security_group.vpc_base_sg.id]
+// module "vpc_endpoints" {
+//   source             = "terraform-aws-modules/vpc/aws//modules/vpc-endpoints"
+//   vpc_id             = module.vpc.vpc_id
+//   security_group_ids = [data.aws_security_group.vpc_base_sg.id]
 
-  endpoints = {
-    s3 = {
-      service = "s3"
-      tags    = { Name = "s3-vpc-endpoint" }
-    }
-    //,
-    // dynamodb = {
-    //   # gateway endpoint
-    //   service         = "dynamodb"
-    //   route_table_ids = ["rt-12322456", "rt-43433343", "rt-11223344"]
-    //   tags            = { Name = "dynamodb-vpc-endpoint" }
-    // }
-  }
+//   endpoints = {
+//     s3 = {
+//       service = "s3"
+//       tags    = { Name = "s3-vpc-endpoint" }
+//     }
+//     //,
+//     // dynamodb = {
+//     //   # gateway endpoint
+//     //   service         = "dynamodb"
+//     //   route_table_ids = ["rt-12322456", "rt-43433343", "rt-11223344"]
+//     //   tags            = { Name = "dynamodb-vpc-endpoint" }
+//     // }
+//   }
 
-  tags = merge(local.tags, {
-    Project  = "Secret"
-    Endpoint = "true"
-  })
+//   tags = merge(local.tags, {
+//     Project  = "Secret"
+//     Endpoint = "true"
+//   })
 
-}
+// }
 
 
 module "vpc" {
