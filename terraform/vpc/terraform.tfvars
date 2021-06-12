@@ -1,4 +1,3 @@
-owner = "Ujjwal Singh"
 vpc_name = "ujjwal-default-vpc"
 vpc_cidr = "10.0.0.0/16"
 vpc_private_subnet_list = ["10.0.0.0/18", "10.0.64.0/18", "10.0.128.0/18"]
@@ -12,7 +11,8 @@ aws_profile = ""
 aws_assume_role = ""
 enable_hosted_zone_association = false
 secondary_cidr_blocks = []
-tags = []
+tags = {}
+hosted_zone_id = "dummy"
 
 
 
