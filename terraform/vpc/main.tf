@@ -22,6 +22,8 @@ module "vpc" {
   public_subnet_tags = {
     "kubernetes.io/role/elb" = 1
   }
+
+  create_igw              = true
   enable_nat_gateway      = false
   single_nat_gateway      = true
   map_public_ip_on_launch = false
