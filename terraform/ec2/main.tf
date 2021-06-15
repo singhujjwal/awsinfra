@@ -23,11 +23,10 @@ data "terraform_remote_state" "vpc" {
 }
 
 
-
 locals {
   vpc_id = var.vpc_id != "null" ? var.vpc_id : (var.vpc_tfstate_bucket_key == "null" ? "null" : data.terraform_remote_state.vpc[0].outputs.vpc_id)
 
-    private_subnets = split(
+  private_subnets = split(
     ",",
     length(var.private_subnets) != 0 ? join(",", var.private_subnets) : (var.vpc_tfstate_bucket_key == "null" ? "null" : join(",", data.terraform_remote_state.vpc[0].outputs.private_subnets)),
   )
@@ -35,6 +34,7 @@ locals {
     ",",
     length(var.public_subnets) != 0 ? join(",", var.public_subnets) : (var.vpc_tfstate_bucket_key == "null" ? "null" : join(",", data.terraform_remote_state.vpc[0].outputs.public_subnets)),
   )
-
 }
+
+
 
