@@ -44,3 +44,78 @@ locals {
 
 
 
+resource "aws_instance" "eks-bastion-instance" {
+  ami           = ""
+  count         = 1
+  subnet_id     = local.public_subnets[0]
+  instance_type = ""
+  key_name = local.key_pair_name
+
+  vpc_security_group_ids      = [aws_security_group.allow_ssh_access.id]
+  associate_public_ip_address = false
+
+
+  root_block_device {
+    volume_type           = "gp2"
+    volume_size           = "35"
+    delete_on_termination = true
+  }
+
+}
+
+
+module "test_instance" {
+  source                 = "terraform-aws-modules/ec2-instance/aws"
+  version                = "~> 2.0"
+
+  name                   = "my-tiny"
+  instance_count         = 1
+
+  ami                    = "ami-ebd02392"
+  instance_type          = "t2.micro"
+  key_name               = local.key_pair_name
+  monitoring             = false
+  vpc_security_group_ids = [aws_security_group.allow_ssh_access.id]
+  subnet_id              = local.public_subnets[0]
+  associate_public_ip_address = false
+
+
+}
+
+
+resource "aws_eip" "lb" {
+  instance = module.test_instance.test_instance.id
+  vpc      = true
+}
+
+
+
+data "http" "terraform_host_private_ip" {
+  url = "http://169.254.169.254/latest/meta-data/local-ipv4"
+}
+
+data "http" "terraform_host_public_ip" {
+  url = "https://checkip.amazonaws.com"
+}
+
+
+resource "aws_security_group" "allow_ssh_access" {
+  name        = "allow_ssh_access"
+  description = "Allow all inbound traffic from local laptop"
+  vpc_id      = local.vpc_id
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["${trimspace(data.http.terraform_host_public_ip.body)}/32", "${trimspace(data.http.terraform_host_private_ip.body)}/32"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+}
