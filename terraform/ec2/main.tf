@@ -22,6 +22,10 @@ data "terraform_remote_state" "vpc" {
   }
 }
 
+data "aws_ssm_parameter" "private_ssh_key" {
+  name = local.private_ssh_key_ssm_path
+}
+
 
 locals {
   vpc_id = var.vpc_id != "null" ? var.vpc_id : (var.vpc_tfstate_bucket_key == "null" ? "null" : data.terraform_remote_state.vpc[0].outputs.vpc_id)
@@ -34,6 +38,8 @@ locals {
     ",",
     length(var.public_subnets) != 0 ? join(",", var.public_subnets) : (var.vpc_tfstate_bucket_key == "null" ? "null" : join(",", data.terraform_remote_state.vpc[0].outputs.public_subnets)),
   )
+  key_pair_name = var.key_pair_name
+  private_ssh_key_ssm_path = var.private_ssh_key_ssm_path
 }
 
 
