@@ -18,3 +18,8 @@ output "TF_VAR_private_subnets" {
   description = "AWS Private Subnets"
   value       = local.private_subnets
 }
+
+
+output "public_ip" {
+value = local.my_public_ip
+}

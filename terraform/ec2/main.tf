@@ -40,6 +40,8 @@ locals {
   )
   key_pair_name = var.key_pair_name
   private_ssh_key_ssm_path = var.private_ssh_key_ssm_path
+
+  my_public_ip = "${trimspace(data.http.terraform_host_public_ip.body)}/32"
 }
 
 
@@ -71,7 +73,7 @@ module "test_instance" {
   name                   = "my-tiny"
   instance_count         = 1
 
-  ami                    = "ami-ebd02392"
+  ami                    = "ami-026f33d38b6410e30"
   instance_type          = "t2.micro"
   key_name               = local.key_pair_name
   monitoring             = false
@@ -79,20 +81,20 @@ module "test_instance" {
   subnet_id              = local.public_subnets[0]
   associate_public_ip_address = false
 
-
 }
 
 
 resource "aws_eip" "lb" {
-  instance = module.test_instance.test_instance.id
+  instance = one(module.test_instance.id)
   vpc      = true
+  depends_on = [module.test_instance]
 }
 
 
 
-data "http" "terraform_host_private_ip" {
-  url = "http://169.254.169.254/latest/meta-data/local-ipv4"
-}
+#data "http" "terraform_host_private_ip" {
+#  url = "http://169.254.169.254/latest/meta-data/local-ipv4"
+#}
 
 data "http" "terraform_host_public_ip" {
   url = "https://checkip.amazonaws.com"
@@ -108,7 +110,8 @@ resource "aws_security_group" "allow_ssh_access" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["${trimspace(data.http.terraform_host_public_ip.body)}/32", "${trimspace(data.http.terraform_host_private_ip.body)}/32"]
+    # cidr_blocks = ["${trimspace(data.http.terraform_host_public_ip.body)}/32", "${trimspace(data.http.terraform_host_private_ip.body)}/32"]
+    cidr_blocks = ["${trimspace(data.http.terraform_host_public_ip.body)}/32"]
   }
 
   egress {
