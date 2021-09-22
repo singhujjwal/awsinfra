@@ -12,7 +12,7 @@ aws_assume_role                = ""
 enable_hosted_zone_association = false
 secondary_cidr_blocks          = []
 tags                           = {}
-hosted_zone_id                 = "dummy"
+hosted_zone_id                 = "Z02761041VYXF5VN9VLXK"
 
 
 
