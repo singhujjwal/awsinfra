@@ -7,3 +7,9 @@ So for that reason don't keep the bucket name in the backend file rather use the
 # It wont work at all -----------So use Terragrunt here 
 
 `terraform remote config -backend=s3 -backend-config="bucket=ujjwal-tf-bucket" backend-config="key=awsinfra/tfstate/components/vpc/vpc.tfstate" -backend-config="region=ap-south-1"`
+
+
+## Variable file precedence 
+
+All according to terraform, terragrunt.hcl has lower precedence than terraform.tfvars
+It's good to keep both the file present as terragrunt.hcl with inputs can be used easily as a reference for the live repo and good for testing the core terraform module
