@@ -1,0 +1,83 @@
+aws-nuke version v2.16.0 - Mon Sep  6 14:25:04 UTC 2021 - 048c4bb92e38f8a119fb5d988f548cc622fb1b26
+
+Do you really want to nuke the account with the ID 458516813260 and the alias 'my-ftier'?
+Do you want to continue? Enter account alias to continue.
+> 
+ap-south-1 - ElasticacheCacheParameterGroup - default.memcached1.4 - [GroupFamily: "memcached1.4", GroupName: "default.memcached1.4"] - Cannot delete default cache parameter group
+ap-south-1 - ElasticacheCacheParameterGroup - default.memcached1.5 - [GroupFamily: "memcached1.5", GroupName: "default.memcached1.5"] - Cannot delete default cache parameter group
+ap-south-1 - ElasticacheCacheParameterGroup - default.memcached1.6 - [GroupFamily: "memcached1.6", GroupName: "default.memcached1.6"] - Cannot delete default cache parameter group
+ap-south-1 - ElasticacheCacheParameterGroup - default.redis2.8 - [GroupFamily: "redis2.8", GroupName: "default.redis2.8"] - Cannot delete default cache parameter group
+ap-south-1 - ElasticacheCacheParameterGroup - default.redis3.2 - [GroupFamily: "redis3.2", GroupName: "default.redis3.2"] - Cannot delete default cache parameter group
+ap-south-1 - ElasticacheCacheParameterGroup - default.redis3.2.cluster.on - [GroupFamily: "redis3.2", GroupName: "default.redis3.2.cluster.on"] - Cannot delete default cache parameter group
+ap-south-1 - ElasticacheCacheParameterGroup - default.redis4.0 - [GroupFamily: "redis4.0", GroupName: "default.redis4.0"] - Cannot delete default cache parameter group
+ap-south-1 - ElasticacheCacheParameterGroup - default.redis4.0.cluster.on - [GroupFamily: "redis4.0", GroupName: "default.redis4.0.cluster.on"] - Cannot delete default cache parameter group
+ap-south-1 - ElasticacheCacheParameterGroup - default.redis5.0 - [GroupFamily: "redis5.0", GroupName: "default.redis5.0"] - Cannot delete default cache parameter group
+ap-south-1 - ElasticacheCacheParameterGroup - default.redis5.0.cluster.on - [GroupFamily: "redis5.0", GroupName: "default.redis5.0.cluster.on"] - Cannot delete default cache parameter group
+ap-south-1 - ElasticacheCacheParameterGroup - default.redis6.x - [GroupFamily: "redis6.x", GroupName: "default.redis6.x"] - Cannot delete default cache parameter group
+ap-south-1 - ElasticacheCacheParameterGroup - default.redis6.x.cluster.on - [GroupFamily: "redis6.x", GroupName: "default.redis6.x.cluster.on"] - Cannot delete default cache parameter group
+ap-south-1 - EC2RouteTable - rtb-b7b82edc - [] - would remove
+ap-south-1 - EC2NetworkACL - acl-91e55efa - [ID: "acl-91e55efa"] - cannot delete default VPC
+ap-south-1 - CloudWatchAlarm - TargetTracking-table/tfstate-table-AlarmHigh-4a846242-926a-4b3e-a8f2-e0c37d7c66a5 - would remove
+ap-south-1 - CloudWatchAlarm - TargetTracking-table/tfstate-table-AlarmHigh-843de103-abad-42b3-95d1-7e3946fcc439 - would remove
+ap-south-1 - CloudWatchAlarm - TargetTracking-table/tfstate-table-AlarmLow-2fd4f13b-1395-45fa-a6e2-004946a2d1b1 - would remove
+ap-south-1 - CloudWatchAlarm - TargetTracking-table/tfstate-table-AlarmLow-e9e37f37-41dd-453b-a099-9d23ac0153d1 - would remove
+ap-south-1 - CloudWatchAlarm - TargetTracking-table/tfstate-table-ProvisionedCapacityHigh-1860a747-b12e-41a9-9765-3676ea9aa395 - would remove
+ap-south-1 - CloudWatchAlarm - TargetTracking-table/tfstate-table-ProvisionedCapacityHigh-691bec4d-3567-46f0-ab54-1c65357a6072 - would remove
+ap-south-1 - CloudWatchAlarm - TargetTracking-table/tfstate-table-ProvisionedCapacityLow-140600aa-eca3-4fa5-a8d6-67a78efcb5a9 - would remove
+ap-south-1 - CloudWatchAlarm - TargetTracking-table/tfstate-table-ProvisionedCapacityLow-6ed3a65a-1f4e-434c-80bf-66a68952fafe - would remove
+ap-south-1 - MediaConvertQueue - Default - cannot delete default queue
+ap-south-1 - AppStreamImage - AppStream-Graphics-G4dn-WinServer2019-10-08-2021 - cannot delete public AWS images
+ap-south-1 - AppStreamImage - AppStream-Graphics-G4dn-WinServer2012-10-08-2021 - cannot delete public AWS images
+ap-south-1 - AppStreamImage - AppStream-Graphics-G4dn-WinServer2016-07-19-2021 - cannot delete public AWS images
+ap-south-1 - AppStreamImage - AppStream-WinServer2016-07-19-2021 - cannot delete public AWS images
+ap-south-1 - AppStreamImage - AppStream-Graphics-G4dn-WinServer2016-10-08-2021 - cannot delete public AWS images
+ap-south-1 - AppStreamImage - AppStream-WinServer2012R2-07-19-2021 - cannot delete public AWS images
+ap-south-1 - AppStreamImage - AppStream-WinServer2019-07-19-2021 - cannot delete public AWS images
+ap-south-1 - AppStreamImage - AppStream-WinServer2016-10-08-2021 - cannot delete public AWS images
+ap-south-1 - AppStreamImage - AppStream-WinServer2019-10-08-2021 - cannot delete public AWS images
+ap-south-1 - AppStreamImage - AppStream-Graphics-G4dn-WinServer2019-07-19-2021 - cannot delete public AWS images
+ap-south-1 - AppStreamImage - AppStream-Graphics-G4dn-WinServer2012R2-07-19-2021 - cannot delete public AWS images
+ap-south-1 - AppStreamImage - AppStream-WinServer2012R2-10-08-2021 - cannot delete public AWS images
+ap-south-1 - AppStreamImage - Amazon-AppStream2-Sample-Image-10-08-2021 - cannot delete public AWS images
+ap-south-1 - AthenaWorkGroup - primary - [ARN: "arn:aws:athena:ap-south-1:458516813260:workgroup/primary", Name: "primary"] - cannot delete primary athena work group
+ap-south-1 - DynamoDBTable - tfstate-table - [Identifier: "tfstate-table"] - would remove
+ap-south-1 - OpsWorksUserProfile - arn:aws:iam::458516813260:user/ujjwal - Cannot delete OpsWorksUserProfile of calling User
+ap-south-1 - EC2KeyPair - ujjwalAWS - would remove
+ap-south-1 - EC2InternetGatewayAttachment - igw-a16d0fc9 -> vpc-61bc6c0a - [] - would remove
+ap-south-1 - Route53ResolverRule - rslvr-autodefined-rr-internet-resolver (Internet Resolver) - [ID: "rslvr-autodefined-rr-internet-resolver", Name: "Internet Resolver"] - Filtering DomainName "."
+ap-south-1 - EC2Address - 3.109.195.253 - [AllocationID: "eipalloc-08ba7f61464833ae6"] - would remove
+ap-south-1 - EC2NetworkInterface - [AvailabilityZone: "ap-south-1a", ID: "eni-04ee843fe17ecee1d", PrivateIPAddress: "172.31.34.44", Status: "in-use", SubnetID: "subnet-647d830f", VPC: "vpc-61bc6c0a", tag:Name: "jenkinsmaster"] - would remove
+ap-south-1 - EC2Volume - vol-0b12e0f7bafe05f9f - [State: "in-use", tag:Name: "jenkinsmaster"] - would remove
+ap-south-1 - EC2Subnet - subnet-647d830f - [DefaultForAz: "true"] - would remove
+ap-south-1 - EC2Subnet - subnet-9ecae5d2 - [DefaultForAz: "true"] - would remove
+ap-south-1 - EC2Subnet - subnet-b77100cc - [DefaultForAz: "true"] - would remove
+ap-south-1 - EC2DHCPOption - dopt-4df04f26 - [] - would remove
+ap-south-1 - EC2VPC - vpc-61bc6c0a - [ID: "vpc-61bc6c0a", IsDefault: "true"] - would remove
+ap-south-1 - KMSAlias - alias/aws/dynamodb - [Name: "alias/aws/dynamodb"] - cannot delete AWS alias
+ap-south-1 - KMSAlias - alias/aws/ebs - [Name: "alias/aws/ebs"] - cannot delete AWS alias
+ap-south-1 - KMSAlias - alias/aws/elasticfilesystem - [Name: "alias/aws/elasticfilesystem"] - cannot delete AWS alias
+ap-south-1 - KMSAlias - alias/aws/es - [Name: "alias/aws/es"] - cannot delete AWS alias
+ap-south-1 - KMSAlias - alias/aws/glue - [Name: "alias/aws/glue"] - cannot delete AWS alias
+ap-south-1 - KMSAlias - alias/aws/kinesisvideo - [Name: "alias/aws/kinesisvideo"] - cannot delete AWS alias
+ap-south-1 - KMSAlias - alias/aws/rds - [Name: "alias/aws/rds"] - cannot delete AWS alias
+ap-south-1 - KMSAlias - alias/aws/redshift - [Name: "alias/aws/redshift"] - cannot delete AWS alias
+ap-south-1 - KMSAlias - alias/aws/redshifttest - [Name: "alias/aws/redshifttest"] - cannot delete AWS alias
+ap-south-1 - KMSAlias - alias/aws/s3 - [Name: "alias/aws/s3"] - cannot delete AWS alias
+ap-south-1 - KMSAlias - alias/aws/ssm - [Name: "alias/aws/ssm"] - cannot delete AWS alias
+ap-south-1 - KMSAlias - alias/aws/xray - [Name: "alias/aws/xray"] - cannot delete AWS alias
+ap-south-1 - DynamoDBTableItem - tfstate-table -> ujjwal-tf-bucket/awsinfra/tfstate/components/vpc/vpc.tfstate-md5 - [KeyName: "LockID", KeyValue: "ujjwal-tf-bucket/awsinfra/tfstate/components/vpc/vpc.tfstate-md5", Table: "tfstate-table"] - would remove
+ap-south-1 - DynamoDBTableItem - tfstate-table -> ujjwal-tf-bucket/awsinfra/tfstate/components/test/test.tfstate-md5 - [KeyName: "LockID", KeyValue: "ujjwal-tf-bucket/awsinfra/tfstate/components/test/test.tfstate-md5", Table: "tfstate-table"] - would remove
+ap-south-1 - S3Object - s3://aws-cloudtrail-logs-458516813260-b44b2dc1/AWSLogs/458516813260/CloudTrail/ - [Bucket: "aws-cloudtrail-logs-458516813260-b44b2dc1", IsLatest: "true", Key: "AWSLogs/458516813260/CloudTrail/", VersionID: "null"] - would remove
+ap-south-1 - S3Object - s3://ujjwal-tf-bucket/awsinfra/tfstate/components/test/test.tfstate - [Bucket: "ujjwal-tf-bucket", IsLatest: "true", Key: "awsinfra/tfstate/components/test/test.tfstate", VersionID: "null"] - would remove
+ap-south-1 - S3Object - s3://ujjwal-tf-bucket/awsinfra/tfstate/components/vpc/vpc.tfstate - [Bucket: "ujjwal-tf-bucket", IsLatest: "true", Key: "awsinfra/tfstate/components/vpc/vpc.tfstate", VersionID: "null"] - would remove
+ap-south-1 - EC2PlacementGroup - cluster-placement - would remove
+ap-south-1 - EC2InternetGateway - igw-a16d0fc9 - [] - would remove
+ap-south-1 - EC2SecurityGroup - sg-08337818107abd44d - [Name: "public-access", tag:Name: "public-SSH"] - would remove
+ap-south-1 - EC2SecurityGroup - sg-0e38b03755f5d7071 - [Name: "dolphin-ISP", tag:Name: "dolphin-ISP"] - would remove
+ap-south-1 - EC2SecurityGroup - sg-ea661a94 - [Name: "default"] - cannot delete group 'default'
+ap-south-1 - EC2Instance - i-066e4a47f0a8ba0f0 - [Identifier: "i-066e4a47f0a8ba0f0", ImageIdentifier: "ami-0506674c0a788c509", InstanceState: "running", InstanceType: "t2.micro", LaunchTime: "2021-10-26T06:44:23Z", tag:Name: "jenkinsmaster"] - would remove
+ap-south-1 - ApplicationAutoScalingScalableTarget - table/tfstate-table: dynamodb:table:WriteCapacityUnits - [ResourceID: "table/tfstate-table", ScalableDimension: "dynamodb:table:WriteCapacityUnits", ServiceNamespace: "dynamodb"] - would remove
+ap-south-1 - ApplicationAutoScalingScalableTarget - table/tfstate-table: dynamodb:table:ReadCapacityUnits - [ResourceID: "table/tfstate-table", ScalableDimension: "dynamodb:table:ReadCapacityUnits", ServiceNamespace: "dynamodb"] - would remove
+Scan complete: 75 total, 32 nukeable, 43 filtered.
+
+The above resources would be deleted with the supplied configuration. Provide --no-dry-run to actually destroy resources.

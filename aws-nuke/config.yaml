@@ -1,0 +1,15 @@
+regions:
+- ap-south-1
+
+account-blocklist:
+- "999999999999" # production
+
+accounts:
+  "458516813260" : {}
+
+resource-types:
+  excludes:
+  - IAMUser
+  - Route53HostedZone
+  - S3Bucket
+  - EC2KeyPair

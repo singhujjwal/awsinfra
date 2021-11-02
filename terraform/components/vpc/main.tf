@@ -1,5 +1,6 @@
 
 data "aws_availability_zones" "available" {
+
 }
 
 
@@ -45,12 +46,17 @@ resource "aws_security_group" "vpc_base_sg" {
 
 
 module "vpc" {
-  source          = "terraform-aws-modules/vpc/aws"
-  version         = "2.70.0"
-  name            = var.vpc_name
-  cidr            = var.vpc_cidr
-  azs             = [data.aws_availability_zones.available.names[0], data.aws_availability_zones.available.names[1], data.aws_availability_zones.available.names[2]]
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "2.70.0"
+  name    = var.vpc_name
+  cidr    = var.vpc_cidr
+  azs = [
+    data.aws_availability_zones.available.names[0],
+    data.aws_availability_zones.available.names[1],
+    data.aws_availability_zones.available.names[2]
+  ]
   private_subnets = var.vpc_private_subnet_list
+  //This is only for auto discovery of instances by load balancers, kubernetes load balancing auto discovery to work
   private_subnet_tags = {
     "kubernetes.io/role/internal-elb" = 1
   }
@@ -72,12 +78,12 @@ module "vpc" {
   dhcp_options_domain_name_servers = var.dns_server_list
 
 
-  enable_s3_endpoint              = true
+  enable_s3_endpoint              = false
   ec2_endpoint_security_group_ids = [aws_security_group.vpc_base_sg.id]
 
   # Enable ec2 endpoint for instances in private subnet to access
   # aws resources via this endpoint rather than using the NAT gateway
-  enable_ec2_endpoint = true
+  enable_ec2_endpoint = false
 
   secondary_cidr_blocks              = var.secondary_cidr_blocks
   create_redshift_subnet_group       = false
