@@ -1,0 +1,7 @@
+vpc_id               = "vpc-09e60a39a92e4dbea"
+subnet_id            = "subnet-0bc7f4a990a6309a3"
+name                 = "masterjenkins"
+region               = "ap-south-1"
+master_instance_type = "t2.medium"
+master_instance_ami  = "ami-041db4a969fe3eb68"
+key_name             = "ujjwalAWS"

@@ -58,11 +58,13 @@ module "vpc" {
   private_subnets = var.vpc_private_subnet_list
   //This is only for auto discovery of instances by load balancers, kubernetes load balancing auto discovery to work
   private_subnet_tags = {
-    "kubernetes.io/role/internal-elb" = 1
+    "kubernetes.io/role/internal-elb" = 1,
+    "Name" = "Private-Subnet"
   }
   public_subnets = var.vpc_public_subnet_list
   public_subnet_tags = {
-    "kubernetes.io/role/elb" = 1
+    "kubernetes.io/role/elb" = 1,
+    "Name" = "Public-Subnet"
   }
 
   create_igw              = true
