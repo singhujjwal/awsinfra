@@ -27,16 +27,20 @@ data "aws_iam_policy_document" "instance-assume-role-policy" {
   }
 }
 
-resource "aws_iam_instance_profile" "jenkins_master" {
-  name = "${var.name}_jenkins"
-  role = aws_iam_role.jenkins_master.name
-}
-
+//Create a role with assume role policy of type ec2
 resource "aws_iam_role" "jenkins_master" {
   name               = "${var.name}_jenkins"
   assume_role_policy = data.aws_iam_policy_document.instance-assume-role-policy.json
 }
 
+
+//Create an instance profile
+resource "aws_iam_instance_profile" "jenkins_master" {
+  name = "${var.name}_jenkins"
+  role = aws_iam_role.jenkins_master.name
+}
+
+//Create another policy and attach to the role.
 resource "aws_iam_role_policy" "jenkins" {
   name = "${var.name}_jenkins"
   role = aws_iam_role.jenkins_master.id

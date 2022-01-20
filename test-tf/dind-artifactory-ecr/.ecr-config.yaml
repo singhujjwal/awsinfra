@@ -1,0 +1,28 @@
+ecr_repositories:
+  - account_id: 12345123
+    description: Credhelpers for the repos in the account in the region
+    regions:
+      - name: us-east-1
+        repo_names:
+          - test-image
+          - test-image1
+          - test-image2
+      - name: us-east-2
+        repo_name:
+          - test-image
+          - test-image4
+          - test-image-5
+  - account_id: 3123123123
+    description: For another account
+    regions:
+      - name: us-east-1
+        repo_names:
+          - test-image
+          - test-image1
+          - test-image2
+      - name: us-east-2
+        repo_name:
+          - test-image
+          - test-image4
+          - test-image-5
+
