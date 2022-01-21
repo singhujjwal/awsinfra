@@ -14,5 +14,5 @@ secondary_cidr_blocks          = []
 tags                           = {}
 hosted_zone_id                 = "Z02761041VYXF5VN9VLXK"
 
-
+#aws ec2 create-vpc --cidr-block 10.0.0.0/16
 

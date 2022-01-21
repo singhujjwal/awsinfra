@@ -66,7 +66,6 @@ module "vpc" {
     "kubernetes.io/role/elb" = 1,
     "Name" = "Public-Subnet"
   }
-
   create_igw              = true
   enable_nat_gateway      = false
   single_nat_gateway      = true
@@ -85,6 +84,7 @@ module "vpc" {
 
   # Enable ec2 endpoint for instances in private subnet to access
   # aws resources via this endpoint rather than using the NAT gateway
+
   enable_ec2_endpoint = false
 
   secondary_cidr_blocks              = var.secondary_cidr_blocks
