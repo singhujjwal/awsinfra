@@ -52,3 +52,12 @@ helm uninstall my-artifactory
 
 eksctl create cluster -f cluster.yaml
 eksctl delete cluster -f cluster.yaml
+
+
+## Setup helm repo
+helm repo add nginx-stable https://helm.nginx.com/stable
+helm repo update
+kubectl create namespace nginx-ingress
+helm install nginx nginx-stable/nginx-ingress -n nginx-ingress --set controller.enableCustomResources=true
+helm uninstall nginx -n nginx-ingress
+

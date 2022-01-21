@@ -51,6 +51,9 @@ module "eks" {
     min_capacity     = 1
   }
 
+  # m4.large	2	8 Moderate General purpose
+  # t3.large	2	8 Burstable
+
   worker_groups = [
     {
       instance_type = "m4.large"
