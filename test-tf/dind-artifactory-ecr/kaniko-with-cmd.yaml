@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kaniko-eks
+  namespace: ujjwal-agent
+spec:
+  serviceAccountName: service-account2
+  automountServiceAccountToken: true
+  restartPolicy: Never
+  containers:
+  - name: kaniko
+    image: gcr.io/kaniko-project/executor:v1.6.0-debug
+    imagePullPolicy: Always
+    command: ["sleep"]
+    args: ["99d"]
+    volumeMounts:
+      - name: docker-config
+        mountPath: /kaniko/.docker/
+    resources:
+      limits:
+        cpu: 1
+        memory: 1Gi
+  volumes:
+    - name: docker-config
+      configMap:
+        name: ujjwal

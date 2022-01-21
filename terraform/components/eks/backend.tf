@@ -4,7 +4,7 @@ terraform {
     bucket         = "ujjwal-tf-bucket"
     dynamodb_table = "tfstate-table"
     encrypt        = true
-    key            = "components/ec2/terraform.tfstate"
+    key            = "components/eks/terraform.tfstate"
     region         = "ap-south-1"
   }
 }

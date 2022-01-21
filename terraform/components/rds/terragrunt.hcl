@@ -1,3 +1,9 @@
+include "root" {
+  path = find_in_parent_folders()
+}
+
+inputs = {
+
 vpc_name                       = "ujjwal-default-vpc"
 vpc_cidr                       = "10.0.0.0/16"
 vpc_private_subnet_list        = ["10.0.0.0/18", "10.0.64.0/18", "10.0.128.0/18"]
@@ -14,5 +20,5 @@ secondary_cidr_blocks          = []
 tags                           = {}
 hosted_zone_id                 = "Z02761041VYXF5VN9VLXK"
 
-#aws ec2 create-vpc --cidr-block 10.0.0.0/16
 
+}
