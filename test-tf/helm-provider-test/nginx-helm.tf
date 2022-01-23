@@ -19,7 +19,7 @@ resource "helm_release" "nginx" {
           annotations = {
             "service.beta.kubernetes.io/aws-load-balancer-backend-protocol"        = "http"
             "service.beta.kubernetes.io/aws-load-balancer-ssl-ports"               = "https"
-            "service.beta.kubernetes.io/aws-load-balancer-ssl-cert"                = "arn:aws:acm:ap-south-1:458516813260:certificate/1651b8b2-da47-4c7c-8c0b-790bef5b5629"
+            "service.beta.kubernetes.io/aws-load-balancer-ssl-cert"                = var.certificate_arn
             "service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout" = "60"
             "service.beta.kubernetes.io/aws-load-balancer-internal"                = "false"
           }
