@@ -94,12 +94,12 @@ output "data" {
 
 variable "artifactory_fqdn" {
   type = string
-  default = "artifactory.sophos-tools.com"
+  default = "artifactory.test.com"
   
 }
 variable "docker_repo_name" {
   type = string
-  default = "central-jenkins-agent"
+  default = "myartifactory"
   
 }
 
